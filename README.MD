@@ -27,7 +27,8 @@ En este repositorio, te guiaré a través de las versiones de **ECMAScript**, ex
    Si deseas descargar este proyecto en tu computadora, usa el siguiente comando en tu terminal:
 
    ```bash
-   git clone https://github.com/tu_usuario/guia-ecmascript.git
+   git clone https://github.com/Ricardo-Palomino/Actividad-Javascrip.git
+
 Requisitos:
 Asegúrate de tener un editor de código como Visual Studio Code o cualquier editor que prefieras. Si deseas ejecutar ejemplos de código directamente en el navegador, asegúrate de tener un entorno que permita compilar el código JavaScript.
 
@@ -37,6 +38,11 @@ Explora el código: Los ejemplos de código están organizados por versiones de 
 HTML5: Estructura de la página web.
 
 CSS3: Estilo y diseño responsivo para todos los dispositivos.
+
+ **GITHUB PAGES**:
+   Para ver este proyecto usa este link 
+
+   https://ricardo-palomino.github.io/Actividad-Javascrip/
 
 
 
