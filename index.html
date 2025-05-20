@@ -7,17 +7,180 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Guía para ECMAScript</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#que-es">¿Qué es ECMAScript?</a></li>
-        <li><a href="#versiones">Versiones</a></li>
-        <li><a href="#uso">¿Cómo utilizarlo?</a></li>
-        <li><a href="#diferencias">Diferencias entre versiones</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+      <h1>Guía para ECMAScript</h1>
+      <nav>
+        <ul>
+          <li><a href="#que-es">¿Qué es ECMAScript?</a></li>
+          <li><a href="#versiones">Versiones</a></li>
+          <li><a href="#uso">¿Cómo utilizarlo?</a></li>
+          <li><a href="#diferencias">Diferencias entre versiones</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <main>
+      <section id="que-es">
+        <h2>¿Qué es ECMAScript?</h2>
+        <p>
+            ECMAScript es un estándar creado por la organización ECMA International que define cómo debe funcionar el lenguaje JavaScript. Su principal objetivo es garantizar que el código JavaScript se comporte de la misma manera en todos los navegadores y plataformas, asegurando la compatibilidad entre diferentes entornos.
 
-</body>
-</html>
+            Este estándar sirve como base para varios lenguajes de programación, siendo JavaScript el más conocido. ECMAScript no es un lenguaje en sí, sino una guía técnica que especifica la sintaxis, tipos de datos, estructuras, funciones, objetos y otras características esenciales que deben implementar los navegadores y motores JavaScript.
+            
+            Desde su primera versión en 1997, ECMAScript ha evolucionado constantemente, añadiendo nuevas funcionalidades modernas como let, const, funciones flecha, promesas, async/await, y muchas otras que facilitan el desarrollo de aplicaciones más potentes, limpias y seguras.
+            
+            Gracias a ECMAScript, los desarrolladores pueden escribir código más eficiente, legible y compatible, sin preocuparse por las diferencias entre los navegadores.
+        </p>
+      </section>
+  
+      <section id="versiones">
+        <h2>Versiones de ECMAScript y Ejemplos</h2>
+     <p>
+        Desde su creación en 1997, ECMAScript ha pasado por múltiples versiones que han ido mejorando y ampliando las capacidades del lenguaje JavaScript. Cada versión trae nuevas funcionalidades, mejoras de rendimiento y mayor claridad en la sintaxis, adaptándose a las necesidades modernas del desarrollo web. A continuación, se presentan las versiones más importantes de ECMAScript con una breve descripción de sus principales aportes.
+     </p>
+        <article>
+          <h3>ES1 a ES4 (1997-2003)</h3>
+          <p>Las primeras versiones de ECMAScript que definieron la sintaxis básica de JavaScript. ES4 fue cancelada debido a su complejidad.</p>
+        </article>
+  
+        <article>
+          <h3>ES5 (2009)</h3>
+          <p>Introdujo el modo estricto (<code>'use strict'</code>) y mejoras en arrays y objetos.</p>
+          <pre><code>'use strict';
+  const numeros = [1, 2, 3];
+  numeros.forEach(function(n) {
+    console.log(n);
+  });</code></pre>
+          <p><strong>Explicación:</strong> El modo estricto ayuda a evitar errores comunes y a escribir código más seguro. El ejemplo muestra cómo iterar sobre un array utilizando <code>forEach</code>.</p>
+        </article>
+  
+        <article>
+          <h3>ES6 (2015)</h3>
+          <p>Introducción de <code>let</code>, <code>const</code>, funciones flecha, y clases.</p>
+          <pre><code>const persona = { nombre: "Ana", edad: 25 };
+  const { nombre } = persona;
+  console.log(`Hola ${nombre}`);</code></pre>
+          <p><strong>Explicación:</strong> La destructuración permite extraer propiedades de un objeto en variables de manera más sencilla. Aquí extraemos <code>nombre</code> de <code>persona</code> y lo mostramos en consola.</p>
+        </article>
+  
+        <article>
+          <h3>ES7 (2016)</h3>
+          <p>Introducción de <code>Array.prototype.includes</code> y el operador de exponenciación <code>**</code>.</p>
+          <pre><code>console.log([1, 2, 3].includes(2)); // true
+  console.log(2 ** 3); // 8</code></pre>
+          <p><strong>Explicación:</strong> <code>includes</code> verifica si un valor está presente en un array. El operador <code>**</code> realiza la exponenciación, en este caso, <code>2 ** 3</code> es igual a 8.</p>
+        </article>
+  
+        <article>
+          <h3>ES8 (2017)</h3>
+          <p>Introducción de <code>async/await</code> para manejar asincronía de manera más sencilla.</p>
+          <pre><code>async function cargarDatos() {
+    const respuesta = await fetch('/api');
+    return respuesta.json();
+  }</code></pre>
+          <p><strong>Explicación:</strong> <code>async/await</code> hace que el código asincrónico sea más fácil de leer. En este caso, esperamos a que se resuelva la llamada <code>fetch()</code> antes de procesar los datos.</p>
+        </article>
+  
+        <article>
+          <h3>ES9 (2018)</h3>
+          <p>Introducción de spread operator para objetos y el método <code>Promise.finally()</code>.</p>
+          <pre><code>const usuario = { nombre: "Pedro" };
+  const nuevo = { ...usuario, edad: 30 };
+  console.log(nuevo);</code></pre>
+          <p><strong>Explicación:</strong> El spread operator permite copiar propiedades de un objeto en otro. En este caso, se crea un nuevo objeto <code>nuevo</code> basado en <code>usuario</code> pero con una propiedad adicional <code>edad</code>.</p>
+        </article>
+  
+        <article>
+          <h3>ES10 (2019)</h3>
+          <p>Introducción de <code>Array.prototype.flat</code> y <code>Object.fromEntries</code>.</p>
+          <pre><code>const entradas = [['nombre', 'Carlos']];
+  console.log(Object.fromEntries(entradas));</code></pre>
+          <p><strong>Explicación:</strong> <code>Object.fromEntries</code> convierte un array de pares clave-valor en un objeto. En este caso, transforma <code>[['nombre', 'Carlos']]</code> en <code>{nombre: 'Carlos'}</code>.</p>
+        </article>
+  
+        <article>
+          <h3>ES11 (2020)</h3>
+          <p>Introducción del operador de fusión nula (<code>??</code>) y el encadenamiento opcional (<code>?.</code>) para evitar errores al acceder a propiedades de objetos.</p>
+          <pre><code>const config = null;
+  const valor = config?.tema ?? 'oscuro';
+  console.log(valor);</code></pre>
+          <p><strong>Explicación:</strong> <code>?.</code> permite acceder a propiedades de objetos de forma segura, incluso si el objeto es <code>null</code> o <code>undefined</code>. En este caso, si <code>config</code> es <code>null</code>, el valor por defecto será <code>'oscuro'</code>.</p>
+        </article>
+  
+        <article>
+          <h3>ES12 (2021)</h3>
+          <p>Introducción de <code>replaceAll()</code> y operadores de asignación lógica como <code>||=</code>, <code>&&=</code>.</p>
+          <pre><code>let saludo = "Hola mundo mundo";
+  console.log(saludo.replaceAll("mundo", "ECMAScript"));</code></pre>
+          <p><strong>Explicación:</strong> <code>replaceAll()</code> reemplaza todas las ocurrencias de una subcadena. En este caso, reemplazamos todas las instancias de <code>"mundo"</code> por <code>"ECMAScript"</code>.</p>
+        </article>
+  
+        <article>
+          <h3>ES13 (2022)</h3>
+          <p>Introducción de <code>await</code> a nivel superior y el método <code>at()</code> para acceder a elementos desde el final de un array.</p>
+          <pre><code>const frutas = ['manzana', 'banana'];
+  console.log(frutas.at(-1)); // "banana"</code></pre>
+          <p><strong>Explicación:</strong> El método <code>at()</code> permite acceder a elementos de un array utilizando índices negativos. En este caso, <code>-1</code> devuelve el último elemento del array.</p>
+        </article>
+  
+        <article>
+          <h3>ES14 (2023)</h3>
+          <p>Introducción de <code>Array.findLast()</code> para encontrar el último elemento que cumpla una condición.</p>
+          <pre><code>const nums = [1, 2, 3, 4];
+  const par = nums.findLast(n => n % 2 === 0);
+  console.log(par);</code></pre>
+          <p><strong>Explicación:</strong> <code>findLast()</code> devuelve el último elemento que cumple con la condición dada. En este caso, encuentra el último número par en el array.</p>
+        </article>
+  
+        <article>
+            <h3>ES15 (2024)</h3>
+            <p>Se añade <code>Object.groupBy()</code> para agrupar elementos de un array según una función de clasificación.</p>
+            <pre><code>const personas = [
+            { nombre: 'Ana', edad: 20 },
+            { nombre: 'Luis', edad: 25 },
+            { nombre: 'Juan', edad: 20 }
+          ];
+          
+          const agrupado = Object.groupBy(personas, p => p.edad);
+          console.log(agrupado);</code></pre>
+            <p><strong>Explicación:</strong> <code>Object.groupBy()</code> agrupa los objetos del array en propiedades del objeto resultante según el valor devuelto por la función. Aquí agrupa por edades.</p>
+          </article>
+          
+  
+          <section id="uso">
+            <h2>¿Cómo utilizar ECMAScript?</h2>
+            <p>
+              ECMAScript se utiliza principalmente a través de JavaScript en el navegador, ya que la mayoría de los navegadores modernos implementan las versiones más recientes del estándar. Esto permite a los desarrolladores aprovechar las nuevas características del lenguaje para escribir código más limpio, eficiente y fácil de mantener.
+            </p>
+            <p>
+              Sin embargo, cuando se necesita compatibilidad con navegadores más antiguos que no soportan versiones recientes de ECMAScript, es común usar herramientas que permiten convertir el código moderno en versiones anteriores (por ejemplo, ES5). Para esto se utilizan:
+            </p>
+            <ul>
+              <li><strong>Babel:</strong> Transpila el código ECMAScript moderno a una versión más compatible (como ES5).</li>
+              <li><strong>Webpack / Vite:</strong> Empaquetadores que optimizan y agrupan módulos JavaScript, integrando Babel fácilmente.</li>
+              <li><strong>Node.js:</strong> Permite ejecutar código JavaScript (basado en ECMAScript) fuera del navegador, útil para servidores y herramientas de desarrollo.</li>
+            </ul>
+          </section>
+          
+  
+      <section id="diferencias">
+        <h2>Diferencias entre versiones</h2>
+        <p>Las versiones de ECMAScript introducen mejoras que hacen el código más limpio, seguro y eficiente:</p>
+        <ul>
+          <li>ES5: <code>'use strict'</code> y <code>JSON</code> para mayor seguridad y compatibilidad.</li>
+          <li>ES6: Nuevas características como <code>let</code>, <code>const</code>, y <code>arrow functions</code>.</li>
+          <li>ES7: <code>includes</code> en arrays y el operador de exponenciación <code>**</code>.</li>
+          <li>ES8: <code>async/await</code> para simplificar la programación asíncrona.</li>
+          <li>ES11: <code>?.</code> y <code>??</code> para un acceso más seguro a las propiedades de los objetos.</li>
+        </ul>
+      </section>
+    </main>
+  
+    <footer>
+      <p>Desarrollado por [Ricardo Palomino] - 2025</p>
+    </footer>
+  </body>
+  </html>
+  
+        
+  
